@@ -2,6 +2,7 @@
 
 sudo apt-get update
 sudo apt-get upgrade
+# TRY THIS NEXT TIME AND DONT DO THE EDIT BELOW: sudo apt-get install golang-1.14
 sudo apt install golang-go
 sudo apt install nodejs
 
