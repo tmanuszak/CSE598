@@ -2,8 +2,10 @@
 
 sudo apt-get update
 sudo apt-get upgrade
-# TRY THIS NEXT TIME AND DONT DO THE EDIT BELOW: sudo apt-get install golang-1.14
-sudo apt install golang-go
+# sudo apt install golang-go
+wget -c https://go.dev/dl/go1.18.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
 sudo apt install nodejs
 
 # Install Docker
@@ -28,5 +30,4 @@ cd fabric-samples/test-network
 ./network.sh createChannel
 
 # Starting a chaincode on the channel
-# BEFORE RUNNING THE NEXT COMMAND! Edit asset-transfer-basic/chaincode-go/go.mod from "go 1.14" to "go 1.13"
 ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-go -ccl go
